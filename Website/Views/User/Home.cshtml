@@ -7,7 +7,7 @@
     
 </div>
 <div class = "table-responsive" >
-<table class="table table-dark table-striped table-hover">
+<table class="table table-striped table-hover" style="background-color:#24a0ed; color:white;">
   <thead>
     <tr>
       <th scope="col">Username</th>
@@ -16,18 +16,12 @@
       </tr>
   </thead>
   <tbody>
+
       @foreach(Website.Models.User u in Model)
         {
-            <tr>
-     
-      <td>   @u.Username   </td>
-      <td>   @u.Email   </td>
-      <td>   @u.Password   </td>
-
-        </tr>
+           <partial name="partialview" model="u"/>
         }
         
-   
   </tbody>
 </table>
 </div>

@@ -7,6 +7,9 @@ html {
     font-size: 16px;
   }
 }
+.field-validation-error{
+    color:red;
+}
 
 html {
   position: relative;
@@ -15,6 +18,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  /*background-image: url('~/lib/bg.webp');*/
 }
 
 .divider:after {

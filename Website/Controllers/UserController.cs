@@ -21,8 +21,16 @@ namespace Website.Controllers
         [HttpPost]
         public ViewResult UserForm(User user)
         {
-            UserRepository.addUser(user);
-            return View("LogIn");
+            if (ModelState.IsValid)
+            {
+                UserRepository.addUser(user);
+                return View("LogIn");
+            }
+            else
+            {
+                //ModelState.AddModelError(string.Empty, "DO NOT LEAVE FIELDS BLANK");
+                return View();
+            }
             
         }
 
@@ -37,20 +45,31 @@ namespace Website.Controllers
         [HttpPost]
         public ViewResult LogIn(User user)
         {
-            User tempUser = new User();   
-            tempUser = UserRepository.GetUser(user);
+            if (ModelState.IsValid)
+            {
+                User tempUser = new User();
+                tempUser = UserRepository.GetUser(user);
 
-            //to check if the user was authenticated
-            if(tempUser != null)
-            {
-                ViewBag.Status = "Success!";
-                ViewBag.Name = user.Username;
+                //to check if the user was authenticated (from DB)
+                if (tempUser != null)
+                {
+                    ViewBag.Status = "Success!";
+                    ViewBag.Name = user.Username;
+                    
+                }
+                else
+                {
+                    ViewBag.Status = "Failure!";
+                    
+                }
+                return View("Message");
+
             }
-            else 
+            else
             {
-                ViewBag.Status = "Invalid Username or Password";
+                return View();
             }
-            return View("Message");
+            
 
         }
         //passing info of all the users in database

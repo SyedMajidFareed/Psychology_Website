@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uUtqkigT247gTSkYMRfGB+UcYvIQmy4zs1UnyaGwMnY=",
+  "Hash": "IZ0QY8O2ssnC2w0p4clHJp/9SwccwjmdUBYZx4vn2gU=",
   "Source": "Website",
   "BasePath": "_content/Website",
   "Mode": "Default",
@@ -100,6 +100,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\lib\\bg.webp",
+      "SourceId": "Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\",
+      "BasePath": "_content/Website",
+      "RelativePath": "lib/bg.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bg.webp"
+    },
+    {
+      "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\lib\\bg2.gif",
+      "SourceId": "Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\",
+      "BasePath": "_content/Website",
+      "RelativePath": "lib/bg2.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bg2.gif"
     },
     {
       "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
