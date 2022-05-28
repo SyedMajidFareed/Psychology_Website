@@ -16,3 +16,39 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.divider:after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.nav-item:hover {
+    background-color: #65c7f7;
+}
+ul li a:hover {
+    background-color: #0277ad;
+    color: royalblue;
+}
+.nav-item:hover {
+    background-color: #65c7f7;
+}
+
+ul li a:hover {
+    background-color: #0277ad;
+    color: royalblue;
+}
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.6s ease;
+}

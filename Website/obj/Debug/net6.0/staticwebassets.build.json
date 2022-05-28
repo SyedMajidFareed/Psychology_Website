@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lcHx0mkVhYeuC6zbM7+lfcO1ImIKAYZCIjz7D9JJTJI=",
+  "Hash": "uUtqkigT247gTSkYMRfGB+UcYvIQmy4zs1UnyaGwMnY=",
   "Source": "Website",
   "BasePath": "_content/Website",
   "Mode": "Default",
@@ -867,6 +867,23 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
+      "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\lib\\home.webp",
+      "SourceId": "Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\",
+      "BasePath": "_content/Website",
+      "RelativePath": "lib/home.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\home.webp"
+    },
+    {
       "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Website",
       "SourceType": "Discovered",
@@ -1069,6 +1086,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\lib\\svg.svg",
+      "SourceId": "Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\",
+      "BasePath": "_content/Website",
+      "RelativePath": "lib/svg.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\svg.svg"
+    },
+    {
+      "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\lib\\svg2.svg",
+      "SourceId": "Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\",
+      "BasePath": "_content/Website",
+      "RelativePath": "lib/svg2.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\svg2.svg"
     }
   ]
 }

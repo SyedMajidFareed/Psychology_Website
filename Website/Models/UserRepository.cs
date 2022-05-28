@@ -13,8 +13,8 @@ namespace Website.Models
             SqlConnection connection = new SqlConnection(connectionString);
 
             //writing a query to insert data
-            string query = $"insert into UserTable(Username, Password) " +
-                           $"values('{user.Username}','{user.Password}')";
+            string query = $"insert into UserTable(Username, Password, Email) " +
+                           $"values('{user.Username}','{user.Password}','{user.Email}')";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             connection.Open();
@@ -42,7 +42,7 @@ namespace Website.Models
                 User user = new User();
                 user.Username = Convert.ToString(dr[1]);
                 user.Password = Convert.ToString(dr[2]);
-                
+                user.Email = Convert.ToString(dr[3]);
                 users.Add(user);
             }
             connection.Close();
