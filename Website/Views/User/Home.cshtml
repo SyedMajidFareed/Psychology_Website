@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model List<UserTable>
 <div class = "container vh-100">
 <div class="text-center">
     <h1 class="display-4">Welcome <b>@ViewBag.Name </b> </h1>
@@ -18,11 +19,12 @@
   </thead>
   <tbody>
 
-      @foreach(Website.Models.User u in Model)
-        {
+      @foreach(var u in Model)
+                {
            <partial name="partialview" model="u"/>
-        }
-        
+                    
+                }
+
   </tbody>
 </table>
 </div>

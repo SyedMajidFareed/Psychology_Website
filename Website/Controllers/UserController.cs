@@ -19,11 +19,11 @@ namespace Website.Controllers
         }
         //when information is recieved from user
         [HttpPost]
-        public ViewResult UserForm(User user)
+        public ViewResult UserForm(UserTable user)
         {
             if (ModelState.IsValid)
             {
-                UserRepository.addUser(user);
+                UserRepository.addUserEF(user);
                 return View("LogIn");
             }
             else
@@ -31,7 +31,7 @@ namespace Website.Controllers
                 //ModelState.AddModelError(string.Empty, "DO NOT LEAVE FIELDS BLANK");
                 return View();
             }
-            
+           
         }
 
         //when information is not recieved from user
@@ -43,12 +43,23 @@ namespace Website.Controllers
 
         //when information is recieved from user
         [HttpPost]
-        public ViewResult LogIn(UserLogin user)
+        public ViewResult LogIn(UserTable user)
         {
-            if (ModelState.IsValid)
+
+
+
+
+
+            //modelvalidation needs to be checked
+
+
+
+
+
+            if (!ModelState.IsValid)
             {
-                UserLogin tempUser = new UserLogin();
-                tempUser = UserRepository.GetUserLogin(user);
+                UserTable tempUser = new UserTable();
+                tempUser = UserRepository.GetUserEF(user);
 
                 //to check if the user was authenticated (from DB)
                 if (tempUser != null)
@@ -75,12 +86,12 @@ namespace Website.Controllers
         //passing info of all the users in database
         public ViewResult Home()
         {
-            return View(UserRepository.getAllUsers());
+            return View(UserRepository.getAllUsersEF());
         }
-        public ViewResult UserDetails(string Username)
+        public ViewResult UserDetails(UserTable User)
         {
-            ViewBag.x = Username;
-            return View();
+            
+            return View(User);
         }
     }
 }
