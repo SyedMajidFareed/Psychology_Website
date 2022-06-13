@@ -1,0 +1,16 @@
+﻿@using Website.Models
+@model User
+@{
+    ViewData["Title"] = "Details";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card" style="width: 18rem;">
+  <img src="~/lib/avatar.svg" class="card-img-top" alt="Male-Avatar">
+  <div class="card-body">
+    <h5 class="card-title">User</h5>
+    <p class="card-text">Our Customer. @ViewBag.x</p>
+    <a href="#" class="btn btn-primary">Contact Information</a>
+  </div>
+</div>

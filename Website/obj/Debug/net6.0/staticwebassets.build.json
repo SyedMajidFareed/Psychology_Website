@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IZ0QY8O2ssnC2w0p4clHJp/9SwccwjmdUBYZx4vn2gU=",
+  "Hash": "xKLqrWjYIV+9jLBB5E2RHjvpZW9hMcjB66bc4fFGi6I=",
   "Source": "Website",
   "BasePath": "_content/Website",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\lib\\avatar.svg",
+      "SourceId": "Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\",
+      "BasePath": "_content/Website",
+      "RelativePath": "lib/avatar.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\avatar.svg"
     },
     {
       "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\lib\\bg.webp",

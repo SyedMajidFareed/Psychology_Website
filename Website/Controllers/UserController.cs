@@ -43,12 +43,12 @@ namespace Website.Controllers
 
         //when information is recieved from user
         [HttpPost]
-        public ViewResult LogIn(User user)
+        public ViewResult LogIn(UserLogin user)
         {
             if (ModelState.IsValid)
             {
-                User tempUser = new User();
-                tempUser = UserRepository.GetUser(user);
+                UserLogin tempUser = new UserLogin();
+                tempUser = UserRepository.GetUserLogin(user);
 
                 //to check if the user was authenticated (from DB)
                 if (tempUser != null)
@@ -76,6 +76,11 @@ namespace Website.Controllers
         public ViewResult Home()
         {
             return View(UserRepository.getAllUsers());
+        }
+        public ViewResult UserDetails(string Username)
+        {
+            ViewBag.x = Username;
+            return View();
         }
     }
 }

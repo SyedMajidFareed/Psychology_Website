@@ -4,14 +4,17 @@ namespace Website.Models
 {
     public class User
     {
-        //public int Id { get; set; }
-        [Required (ErrorMessage = "Please Enter Name")]
-        public string? Username { get; set; }
-
-        [Required (ErrorMessage = "Please Enter Password")]
-        public string? Password { get; set; }
         
+        [Required (ErrorMessage = "Please enter Name")]
+        [StringLength (30)]
+        public string? Username { get; set; }
+        
+        [Required (ErrorMessage = "Please enter Password")]
+        [StringLength(30)]
+        public string? Password { get; set; }
+        [Required]
+        [EmailAddress]
         public string? Email{ get; set; }
-        //public string Gender { get; set; }
+        
     }
 }
