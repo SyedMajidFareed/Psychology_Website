@@ -1,0 +1,13 @@
+﻿@model List<UserTable>
+@foreach (var item in Model)
+{
+ <div class="card" style="display:inline-block; ;width: 18rem;">
+  <img src="~/lib/avatar.svg" class="card-img-top" alt="Male-Avatar">
+  <div class="card-body">
+    <h5 class="card-title">@item.Username</h5>
+    <p class="card-text"> This is some Text.</p>
+    <a href="#" class="btn btn-primary">Contact Information</a>
+  </div>
+</div>
+
+}
