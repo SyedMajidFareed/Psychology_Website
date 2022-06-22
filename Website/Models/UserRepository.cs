@@ -42,6 +42,40 @@ namespace Website.Models
         }
 
 
+
+        public static UserLogin GetUserLogin(UserLogin user)
+        {
+            //establishing connection with database
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebsiteDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            //writing a query to fetxh data
+            string query = $"select * from UserTable where Username = @U AND Password = @P";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            //defining parameters
+            SqlParameter p1 = new SqlParameter("U", user.Username);
+            SqlParameter p2 = new SqlParameter("P", user.Password);
+
+            //adding parameter
+            cmd.Parameters.Add(p1);
+            cmd.Parameters.Add(p2);
+            connection.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                connection.Close();
+                return user;
+            }
+            else
+            {
+                connection.Close();
+                return null;
+            }
+
+        }
+
         //    public static void addUser(User user)
         //{
 
@@ -139,37 +173,5 @@ namespace Website.Models
 
         //}
 
-        //public static UserLogin GetUserLogin(UserLogin user)
-        //{
-        //    //establishing connection with database
-        //    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebsiteDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-        //    SqlConnection connection = new SqlConnection(connectionString);
-
-        //    //writing a query to fetxh data
-        //    string query = $"select * from UserTable where Username = @U AND Password = @P";
-        //    SqlCommand cmd = new SqlCommand(query, connection);
-
-        //    //defining parameters
-        //    SqlParameter p1 = new SqlParameter("U", user.Username);
-        //    SqlParameter p2 = new SqlParameter("P", user.Password);
-
-        //    //adding parameter
-        //    cmd.Parameters.Add(p1);
-        //    cmd.Parameters.Add(p2);
-        //    connection.Open();
-        //    SqlDataReader dr = cmd.ExecuteReader();
-        //    if (dr.Read())
-        //    {
-        //        connection.Close();
-        //        return user;
-        //    }
-        //    else
-        //    {
-        //        connection.Close();
-        //        return null;
-        //    }
-
-        //}
     }
 }

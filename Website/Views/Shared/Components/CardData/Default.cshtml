@@ -1,13 +1,21 @@
 ﻿@model List<UserTable>
+ <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 @foreach (var item in Model)
 {
- <div class="card" style="display:inline-block; ;width: 18rem;">
-  <img src="~/lib/avatar.svg" class="card-img-top" alt="Male-Avatar">
-  <div class="card-body">
-    <h5 class="card-title">@item.Username</h5>
-    <p class="card-text"> This is some Text.</p>
-    <a href="#" class="btn btn-primary">Contact Information</a>
-  </div>
-</div>
 
+    <partial name="CardPartialView" model="item"/>
+
+<script>
+    $("#b_@item.Id").click(function () {
+        if ($("#Email_@item.Id, #Phone_@item.Id").is(":hidden")) {
+            $("#Email_@item.Id, #Phone_@item.Id").slideDown("slow");
+        }
+        else {
+            $( "#Email_@item.Id, #Phone_@item.Id" ).hide();
+  }
+});
+
+</script>
 }

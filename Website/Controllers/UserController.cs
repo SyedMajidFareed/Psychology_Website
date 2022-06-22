@@ -43,23 +43,12 @@ namespace Website.Controllers
 
         //when information is recieved from user
         [HttpPost]
-        public ViewResult LogIn(UserTable user)
+        public ViewResult LogIn(UserLogin user)
         {
-
-
-
-
-
-            //modelvalidation needs to be checked
-
-
-
-
-
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                UserTable tempUser = new UserTable();
-                tempUser = UserRepository.GetUserEF(user);
+                UserLogin tempUser = new UserLogin();
+                tempUser = UserRepository.GetUserLogin(user);
 
                 //to check if the user was authenticated (from DB)
                 if (tempUser != null)
