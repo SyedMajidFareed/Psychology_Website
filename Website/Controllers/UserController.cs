@@ -47,6 +47,7 @@ namespace Website.Controllers
                     file.CopyTo(stream);
                     ViewBag.Message = "file uploaded successfully";
                 }
+                //C:\Users\MajidFareed\source\repos\Website\Website\wwwroot\Uploads\IMG_20220219_182841-01-resize.jpeg
             }
             if (ModelState.IsValid)
             {

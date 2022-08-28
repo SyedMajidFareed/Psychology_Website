@@ -9,18 +9,22 @@ namespace Website.Models.Repositories
             db.ContentItems.Add(contentData);
             db.SaveChanges();
         }
-        public ContentData GetContent(ContentData contentData)
+        public List<ContentData> GetContent()
         {
+            ContentData contentData = new ContentData();
+
             var db = new WebsiteDBContext();
-            var query = db.ContentItems.Where(u => u.Topic == contentData.Topic);
-            if (query.Count() > 0)
+            var query = from data in db.ContentItems select data;
+            List<ContentData> list = new List<ContentData>();
+            
+
+            foreach (var item in query)
             {
-                return contentData;
+
+                list.Add(item);
             }
-            else
-            {
-                return null;
-            }
+            return list;
+         
         }
     }
 }

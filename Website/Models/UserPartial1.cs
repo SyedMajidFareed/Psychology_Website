@@ -8,6 +8,7 @@ namespace Website.Models
 {
     public partial class UserTable
     {
+        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Please Enter Name")]
         [StringLength(30)]
@@ -18,6 +19,7 @@ namespace Website.Models
         [Required]
         [EmailAddress]
         public string? Email { get; set; }
+        public string? imgPath { get; set; }
 
     }
 }

@@ -1,11 +1,63 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model ContentData
 
-
-<div class="text-center vh-100">
+<div class="text-center">
     <h1 class="display-4">Welcome
         <small class="text-muted">to Learn Psychology</small>
     </h1>
+    @*to add data*@
+    <script type="text/javascript">
+        function submitData() {
+            var data = {
+                Topic: $("#Topic_name").val(),
+                Description: $("#Description_data").val(),
+            }
+            console.log(data);
+            $.ajax({
+                type: 'POST',
+                url: '/Content/AddData',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data),
+                success: function (result) {
+                    alert('Successfully received Data ');
+                    console.log(result);
+                },
+                error: function () {
+                    alert('Failed to receive the Data');
+                    console.log('Failed ');
+                }
+            })
+        }
+    </script>
+    <div class="row">
+        <div class="col-md-4">
+            <form id="dataForm" novalidate class="needs-validation">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Topic" class="control-label"></label>
+                    <input asp-for="Topic" class="form-control" id="Topic_name" required />
+                    <span asp-validation-for="Topic" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" id="Description_data" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" onclick="submitData()">Add </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
 </div>
 <vc:content-data></vc:content-data>
+

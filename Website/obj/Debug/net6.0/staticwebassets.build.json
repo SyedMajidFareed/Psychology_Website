@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xKLqrWjYIV+9jLBB5E2RHjvpZW9hMcjB66bc4fFGi6I=",
+  "Hash": "juyYIEMQcKkuIv3whrG504sYBv2l3VtiMiJymf0vsTw=",
   "Source": "Website",
   "BasePath": "_content/Website",
   "Mode": "Default",
@@ -1171,6 +1171,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\svg2.svg"
+    },
+    {
+      "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\Uploads\\download.jpg",
+      "SourceId": "Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\",
+      "BasePath": "_content/Website",
+      "RelativePath": "Uploads/download.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\download.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\Uploads\\IMG_20220219_182841-01-resize.jpeg",
+      "SourceId": "Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\",
+      "BasePath": "_content/Website",
+      "RelativePath": "Uploads/IMG_20220219_182841-01-resize.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\IMG_20220219_182841-01-resize.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\Uploads\\JokerPoster1200_5ca3c435318d42.29270548.webp",
+      "SourceId": "Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\wwwroot\\",
+      "BasePath": "_content/Website",
+      "RelativePath": "Uploads/JokerPoster1200_5ca3c435318d42.29270548.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\JokerPoster1200_5ca3c435318d42.29270548.webp"
     }
   ]
 }
