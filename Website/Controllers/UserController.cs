@@ -6,12 +6,14 @@ namespace Website.Controllers
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
+        private readonly IWebHostEnvironment Environment;
         private readonly IUserLogin Iuser;
 
-        public UserController(ILogger<UserController> logger, IUserLogin Userlogin)
+        public UserController(ILogger<UserController> logger, IUserLogin Userlogin, IWebHostEnvironment environment)
         {
             Iuser = Userlogin;
             _logger = logger;
+            Environment = environment;
         }
         //this is the default view
         public ViewResult Index()
@@ -27,8 +29,25 @@ namespace Website.Controllers
         }
         //when information is recieved from user
         [HttpPost]
-        public ViewResult UserForm(UserTable user)
+        public ViewResult UserForm(List<IFormFile> postedFiles, UserTable user)
         {
+            string wwwPath = this.Environment.WebRootPath;
+            string path = Path.Combine(wwwPath, "Uploads");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            foreach (var file in postedFiles)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var pathWithFileName = Path.Combine(path, fileName);
+                using (FileStream stream = new FileStream(pathWithFileName, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                    ViewBag.Message = "file uploaded successfully";
+                }
+            }
             if (ModelState.IsValid)
             {
                 Iuser.addUserEF(user);
