@@ -1,7 +1,14 @@
+using Website.Models.Interfaces;
+using Website.Models;
+using Website.Models.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton<IUserLogin, UserRepository>();
+builder.Services.AddSingleton<IContentData, ContentDataRepository>();
 
 var app = builder.Build();
 

@@ -17,6 +17,8 @@ namespace Website.Models
         }
 
         public virtual DbSet<UserTable> UserTables { get; set; } = null!;
+        public virtual DbSet<ContentData> ContentItems { get; set; } = null!;
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Website.Models;
-
+using Website.Models.Interfaces;
 namespace Website.Controllers
 {
     public class UserController : Controller
     {
+        private readonly ILogger<UserController> _logger;
+        private readonly IUserLogin Iuser;
+
+        public UserController(ILogger<UserController> logger, IUserLogin Userlogin)
+        {
+            Iuser = Userlogin;
+            _logger = logger;
+        }
         //this is the default view
         public ViewResult Index()
         {
@@ -23,7 +31,7 @@ namespace Website.Controllers
         {
             if (ModelState.IsValid)
             {
-                UserRepository.addUserEF(user);
+                Iuser.addUserEF(user);
                 return View("LogIn");
             }
             else
@@ -48,7 +56,7 @@ namespace Website.Controllers
             if (ModelState.IsValid)
             {
                 UserLogin tempUser = new UserLogin();
-                tempUser = UserRepository.GetUserLogin(user);
+                tempUser = Iuser.GetUserLogin(user);
 
                 //to check if the user was authenticated (from DB)
                 if (tempUser != null)
@@ -75,7 +83,7 @@ namespace Website.Controllers
         //passing info of all the users in database
         public ViewResult Home()
         {
-            return View(UserRepository.getAllUsersEF());
+            return View(Iuser.getAllUsersEF());
         }
         public ViewResult UserDetails(UserTable User)
         {

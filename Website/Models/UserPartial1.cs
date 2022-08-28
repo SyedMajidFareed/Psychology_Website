@@ -9,10 +9,10 @@ namespace Website.Models
     public partial class UserTable
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Please enter Name")]
+        [Required(ErrorMessage = "Please Enter Name")]
         [StringLength(30)]
         public string? Username { get; set; }
-        [Required(ErrorMessage = "Please enter Password")]
+        [Required(ErrorMessage = "Please Enter Password")]
         [StringLength(30)]
         public string? Password { get; set; }
         [Required]
