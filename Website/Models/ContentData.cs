@@ -2,9 +2,8 @@
 
 namespace Website.Models
 {
-    public class ContentData
+    public class ContentData : AuditModel
     {
-        public int Id { get; set; }
         public string? Category { get; set; }
         [Required]
         [StringLength(100)]

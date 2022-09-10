@@ -1,17 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Website.Models;
 using Website.Models.Interfaces;
+using Website.Models.VIewModels;
+
 namespace Website.Controllers
 {
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
         private readonly IWebHostEnvironment Environment;
+        private readonly IMapper _mapper;
         private readonly IUserLogin Iuser;
 
-        public UserController(ILogger<UserController> logger, IUserLogin Userlogin, IWebHostEnvironment environment)
+        public UserController(ILogger<UserController> logger, IUserLogin Userlogin, IMapper mapper, IWebHostEnvironment environment)
         {
             Iuser = Userlogin;
+            _mapper = mapper;
             _logger = logger;
             Environment = environment;
         }
@@ -76,7 +81,7 @@ namespace Website.Controllers
             if (ModelState.IsValid)
             {
                 UserLogin tempUser = new UserLogin();
-                tempUser = Iuser.GetUserLogin(user);
+                tempUser = Iuser.GetUserLoginEF(user);
 
                 //to check if the user was authenticated (from DB)
                 if (tempUser != null)
@@ -98,6 +103,39 @@ namespace Website.Controllers
                 return View();
             }
             
+
+        }
+
+        //when information is recieved from user
+        [HttpPost]
+        public ViewResult MapperLogIn(UserTable user)
+        {
+            if (ModelState.IsValid)
+            {
+                UserViewModel tempUser = new UserViewModel();
+                UserViewModel userViewModel = _mapper.Map<UserViewModel>(user);
+                tempUser = Iuser.GetUserLoginMapper(userViewModel);
+
+                //to check if the user was authenticated (from DB)
+                if (tempUser != null)
+                {
+                    ViewBag.Status = "Success!";
+                    ViewBag.Name = user.Username;
+
+                }
+                else
+                {
+                    ViewBag.Status = "Failure!";
+
+                }
+                return View("Message");
+
+            }
+            else
+            {
+                return View();
+            }
+
 
         }
         //passing info of all the users in database

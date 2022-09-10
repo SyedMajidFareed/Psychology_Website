@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using Microsoft.Data.SqlClient;
 using Website.Models.Interfaces;
+using Website.Models.VIewModels;
+
 namespace Website.Models
 {
     public class UserRepository : IUserLogin
@@ -41,40 +43,67 @@ namespace Website.Models
             }
         }
 
-
-
-        public UserLogin GetUserLogin(UserLogin user)
+        public UserLogin GetUserLoginEF(UserLogin user)
         {
-            //establishing connection with database
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebsiteDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            //writing a query to fetxh data
-            string query = $"select * from UserTable where Username = @U AND Password = @P";
-            SqlCommand cmd = new SqlCommand(query, connection);
-
-            //defining parameters
-            SqlParameter p1 = new SqlParameter("U", user.Username);
-            SqlParameter p2 = new SqlParameter("P", user.Password);
-
-            //adding parameter
-            cmd.Parameters.Add(p1);
-            cmd.Parameters.Add(p2);
-            connection.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            var db = new WebsiteDBContext();
+            var query = db.UserTables.Where(u => u.Username == user.Username && u.Password == user.Password);
+            if (query.Count() > 0)
             {
-                connection.Close();
                 return user;
             }
             else
             {
-                connection.Close();
+                return null;
+            }
+        }
+
+
+        public UserViewModel GetUserLoginMapper(UserViewModel user)
+        {
+            var db = new WebsiteDBContext();
+            var query = db.UserTables.Where(u => u.Username == user.Username && u.Password == user.Password);
+            if (query.Count() > 0)
+            {
+                return user;
+            }
+            else
+            {
                 return null;
             }
 
         }
+        //public UserLogin GetUserLogin(UserLogin user)
+        //{
+        //    //establishing connection with database
+        //    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebsiteDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+        //    SqlConnection connection = new SqlConnection(connectionString);
+
+        //    //writing a query to fetxh data
+        //    string query = $"select * from UserTable where Username = @U AND Password = @P";
+        //    SqlCommand cmd = new SqlCommand(query, connection);
+
+        //    //defining parameters
+        //    SqlParameter p1 = new SqlParameter("U", user.Username);
+        //    SqlParameter p2 = new SqlParameter("P", user.Password);
+
+        //    //adding parameter
+        //    cmd.Parameters.Add(p1);
+        //    cmd.Parameters.Add(p2);
+        //    connection.Open();
+        //    SqlDataReader dr = cmd.ExecuteReader();
+        //    if (dr.Read())
+        //    {
+        //        connection.Close();
+        //        return user;
+        //    }
+        //    else
+        //    {
+        //        connection.Close();
+        //        return null;
+        //    }
+
+        //}
 
         //    public static void addUser(User user)
         //{
