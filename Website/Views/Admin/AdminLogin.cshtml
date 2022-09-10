@@ -1,0 +1,43 @@
+﻿@using Website.Models
+@model Admin
+@{
+    ViewData["Title"] = "Admin Login";
+}
+
+
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="~/lib/svg.svg"
+                     class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+                <form method="post" action="/Admin/AdminLogin">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <!-- Username input -->
+
+                    <div class="my-3 form-floating">
+                        <input asp-for="Name" class="form-control form-control-lg" placeholder="name" />
+                        <label class="form-label">Name</label>
+                        <span asp-validation-for="Name"></span>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="my-3 form-floating">
+
+                        <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="pass" />
+                        <label class="form-label">Password</label>
+                        <span asp-validation-for="Password"></span>
+                    </div>
+
+
+                    <!-- Submit button -->
+                    <input type="submit" class="btn btn-block" style="color:#24a0ed; " value="Log In">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

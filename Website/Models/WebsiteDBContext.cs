@@ -19,6 +19,7 @@ namespace Website.Models
         public virtual DbSet<UserTable> UserTables { get; set; } = null!;
         public virtual DbSet<ContentData> ContentItems { get; set; } = null!;
         public virtual DbSet<Therapist> Therapists { get; set; } = null!;
+        public virtual DbSet<Admin> Admins { get; set; } = null!;
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
