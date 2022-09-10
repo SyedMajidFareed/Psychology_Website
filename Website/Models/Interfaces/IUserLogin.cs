@@ -1,4 +1,5 @@
-﻿using Website.Models.VIewModels;
+﻿using Microsoft.VisualBasic;
+using Website.Models.VIewModels;
 
 namespace Website.Models.Interfaces
 {
@@ -9,5 +10,6 @@ namespace Website.Models.Interfaces
         UserTable GetUserEF(UserTable user);
         UserViewModel GetUserLoginMapper(UserViewModel user);
         public UserLogin GetUserLoginEF(UserLogin user);
+        public void FileUploads(List<IFormFile> postedFiles, string wwwPath);
     }
 }

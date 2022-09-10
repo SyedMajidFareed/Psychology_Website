@@ -33,23 +33,7 @@ namespace Website.Controllers
         public ViewResult TSignup(List<IFormFile> postedFiles, Therapist tuser)
         {
             string wwwPath = this.Environment.WebRootPath;
-            string path = Path.Combine(wwwPath, "TUploads");
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-
-            foreach (var file in postedFiles)
-            {
-                var fileName = Path.GetFileName(file.FileName);
-                var pathWithFileName = Path.Combine(path, fileName);
-                using (FileStream stream = new FileStream(pathWithFileName, FileMode.Create))
-                {
-                    file.CopyTo(stream);
-                    ViewBag.Message = "file uploaded successfully";
-                }
-                //C:\Users\MajidFareed\source\repos\Website\Website\wwwroot\Uploads\IMG_20220219_182841-01-resize.jpeg
-            }
+            Itherapist.FileUploads(postedFiles, wwwPath);
             if (ModelState.IsValid)
             {
                 Itherapist.addTherapistEF(tuser);

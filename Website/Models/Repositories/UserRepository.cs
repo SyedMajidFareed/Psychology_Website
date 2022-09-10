@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic;
 using Website.Models.Interfaces;
 using Website.Models.VIewModels;
 
@@ -72,6 +73,35 @@ namespace Website.Models
             }
 
         }
+
+
+        public void FileUploads(List<IFormFile> postedFiles, string wwwPath)
+        {
+           
+            string path = Path.Combine(wwwPath, "Uploads");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            foreach (var file in postedFiles)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var pathWithFileName = Path.Combine(path, fileName);
+                using (FileStream stream = new FileStream(pathWithFileName, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+                //C:\Users\MajidFareed\source\repos\Website\Website\wwwroot\Uploads\IMG_20220219_182841-01-resize.jpeg
+            }
+        }
+
+
+
+
+
+
+
         //public UserLogin GetUserLogin(UserLogin user)
         //{
         //    //establishing connection with database

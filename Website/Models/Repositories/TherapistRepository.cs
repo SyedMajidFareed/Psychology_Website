@@ -43,35 +43,37 @@ namespace Website.Models.Repositories
 
         public TherapistLogin GetTherapistLogin(TherapistLogin therapist)
         {
-            //establishing connection with database
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebsiteDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            //writing a query to fetxh data
-            string query = $"select * from Therapists where TUsername = @U AND TPassword = @P";
-            SqlCommand cmd = new SqlCommand(query, connection);
-
-            //defining parameters
-            SqlParameter p1 = new SqlParameter("U", therapist.TUsername);
-            SqlParameter p2 = new SqlParameter("P", therapist.TPassword);
-
-            //adding parameter
-            cmd.Parameters.Add(p1);
-            cmd.Parameters.Add(p2);
-            connection.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            var db = new WebsiteDBContext();
+            var query = db.Therapists.Where(u => u.TUsername == therapist.TUsername && u.TPassword == therapist.TPassword);
+            if (query.Count() > 0)
             {
-                connection.Close();
                 return therapist;
             }
             else
             {
-                connection.Close();
                 return null;
             }
 
         }
+        public void FileUploads(List<IFormFile> postedFiles, string wwwPath)
+        {
+            string path = Path.Combine(wwwPath, "TherapistUploads");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            foreach (var file in postedFiles)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var pathWithFileName = Path.Combine(path, fileName);
+                using (FileStream stream = new FileStream(pathWithFileName, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+                //C:\Users\MajidFareed\source\repos\Website\Website\wwwroot\Uploads\IMG_20220219_182841-01-resize.jpeg
+            }
+        }
+
     }
 }

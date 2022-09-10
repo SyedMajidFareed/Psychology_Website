@@ -6,5 +6,7 @@
         List<Therapist> getAllTherapistEF();
         Therapist GetTherapistEF(Therapist therapist);
         TherapistLogin GetTherapistLogin(TherapistLogin therapist);
+        public void FileUploads(List<IFormFile> postedFiles, string wwwPath);
+
     }
 }
