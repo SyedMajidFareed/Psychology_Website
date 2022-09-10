@@ -11,8 +11,10 @@
 </h3>
 @if(ViewBag.Status == "Success!")
     {
-        <h4 >Hello! @ViewBag.Name </h4>
-        <p>Click  <a class="btn btn-primary" role = "button" asp-action="Home" > Here </a>    to view other Users </p> 
+        <h4>Hello!  </h4>
+    <h2>Thanks for Visiting @ViewBag.Name <small class="text-muted">I hope you learn alot</small></h2>
+    <p>If you have an article to add then Add Here</p>
+    <partial name="DataAddingPartialView"/>
     }
     else
     {

@@ -3,7 +3,7 @@
   <img src="~/lib/avatar.svg" class="card-img-top" alt="Male-Avatar">
   <div class="card-body">
     <h5 class="card-title">@Model.TUsername</h5>
-    <p class="card-text"> This is some Text.</p>
+    <p id="Desc_@Model.Id" class="card-text"> @Model.TDescription </p>
     <p id="Email_@Model.Id" style="display:none;">Email: @Model.TEmail</p>
     <p id="Phone_@Model.Id" style="display:none;">Phone: @Model.TContactNum</p>
     <a href="#" class="btn btn-primary" id="b_@Model.Id" >Contact Information</a>

@@ -17,7 +17,11 @@ namespace Website.Controllers
         public IActionResult AddData([FromBody] ContentData data)
         {
             if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError(string.Empty, "DO NOT LEAVE FIELDS BLANK");
                 return BadRequest("Enter required fields");
+
+            }
             //Insert code;
             else
             {
@@ -27,7 +31,6 @@ namespace Website.Controllers
         }
         public IActionResult Latest()
         {
-            //Icontent.addContent();
             return View();
         }
         public IActionResult Quranic()

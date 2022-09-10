@@ -1,5 +1,23 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@{
+    ViewData["Title"] = "Message";
+}
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3 class="text-center">
+    @ViewBag.Status
+</h3>
+@if (ViewBag.Status == "Success!")
+{
+    <h4>Hello!  </h4>
+    <h2>Thanks for Visiting @ViewBag.Name <small class="text-muted">I hope you learn alot</small></h2>
+    <p>If you have an article to add then Add Here</p>
+    <partial name="DataAddingPartialView" />
+}
+else
+{
+    <p>Click  <a class="btn btn-primary" role="button" asp-action="TLogin"> Here </a>    to retry </p>
+
 }

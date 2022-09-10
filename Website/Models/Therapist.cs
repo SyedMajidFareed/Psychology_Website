@@ -15,6 +15,7 @@ namespace Website.Models
         [Required]
         [EmailAddress]
         public string? TEmail { get; set; }
+        public string? TDescription { get; set; }
         public string? TContactNum { get; set; }
         public string? imgPath { get; set; }
     }

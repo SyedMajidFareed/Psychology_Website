@@ -1,20 +1,5 @@
 ﻿@model List<ContentData>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
 @foreach (var item in Model)
 {
     <partial name="contentdataDBPartialView" model="item" />
-
-    <script>
-        $("#b_@item.Id").click(function () {
-            if ($("#Email_@item.Id, #Phone_@item.Id").is(":hidden")) {
-                $("#Email_@item.Id, #Phone_@item.Id").slideDown("slow");
-            }
-            else {
-                $("#Email_@item.Id, #Phone_@item.Id").hide();
-            }
-        });
-
-    </script>
 }

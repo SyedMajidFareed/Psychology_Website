@@ -8,7 +8,7 @@
     <h1 class="display-4">Welcome
         <small class="text-muted">to Learn Psychology</small>
     </h1>
-
+    </div>
     @*Carousel Code*@
    
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -53,23 +53,23 @@
     <h3 class="display-4">
         Categories
     </h3>
-    <ul style="list-style:none">
+<ul class="display-5" style="list-style:none">
         <li >
-        <a href="#carouselExampleIndicators"><small class="text-muted">Modern Psychology</small></a>
+        <a asp-controller="Content" asp-action="Latest"><small class="text-muted">Latest Psychology</small></a>
+            </li> 
+            <li >
+        <a asp-controller="Content" asp-action="Modern" ><small class="text-muted">Modern Psychology</small></a>
             </li>
-        <li style="text-decoration:none">
-        <a href="#carouselExampleIndicators"><small class="text-muted">Quranic Psychology</small></a>
+        <li >
+        <a asp-controller="Content" asp-action="Quranic"><small class="text-muted">Quranic Psychology</small></a>
             </li>
         </ul>
     <h3 class="display-4">
         Contact a  <a asp-controller="User" asp-action="UserDetails"><small class="text-muted">Therapist</small></a>
     </h3>
 
-    @*to add data*@
-
-    @*<partial name="DataAddingPartialView"/>*@
    
-</div>
+
 
 @*<vc:content-data></vc:content-data>*@
 

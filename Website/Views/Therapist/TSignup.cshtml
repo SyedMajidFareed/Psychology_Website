@@ -51,6 +51,15 @@
                         <span asp-validation-for="TContactNum"></span>
 
                     </div>
+                    
+                    <!-- Description input -->
+                    <div class="my-3 form-floating">
+
+                        <input asp-for="TDescription" class="form-control form-control-lg" placeholder="Brief Description about yourself e.g., Your Qualification etc"/>
+                        <label class="form-label">Description</label>
+                        <span asp-validation-for="TDescription"></span>
+
+                    </div>
                     <div>
                         <span>Select File: </span>
                         <input type="file" name="postedFiles" multiple />

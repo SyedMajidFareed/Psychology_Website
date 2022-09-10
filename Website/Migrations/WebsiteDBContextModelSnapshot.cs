@@ -53,6 +53,9 @@ namespace Website.Migrations
                     b.Property<string>("TContactNum")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TDescription")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("TEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
