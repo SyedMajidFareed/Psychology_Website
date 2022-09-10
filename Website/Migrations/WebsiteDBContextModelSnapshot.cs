@@ -42,6 +42,39 @@ namespace Website.Migrations
                     b.ToTable("ContentItems");
                 });
 
+            modelBuilder.Entity("Website.Models.Therapist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("TContactNum")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TPassword")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("TUsername")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("imgPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Therapists");
+                });
+
             modelBuilder.Entity("Website.Models.UserTable", b =>
                 {
                     b.Property<int>("Id")

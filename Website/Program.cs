@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<IUserLogin, UserRepository>();
 builder.Services.AddSingleton<IContentData, ContentDataRepository>();
+builder.Services.AddSingleton<ITherapist, TherapistRepository>();
 
 var app = builder.Build();
 

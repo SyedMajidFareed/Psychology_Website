@@ -1,0 +1,66 @@
+﻿@using Website.Models
+@model Therapist
+@{
+    ViewData["Title"] = "Therapist Login";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="~/lib/svg.svg"
+                     class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+                <form method="post" action="/Therapist/TLogin">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <!-- Username input -->
+
+                    <div class="my-3 form-floating">
+                        <input asp-for="TUsername" class="form-control form-control-lg" />
+                        <label class="form-label">Username</label>
+                        <span asp-validation-for="TUsername"></span>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="my-3 form-floating">
+
+                        <input asp-for="TPassword" type="password" class="form-control form-control-lg" />
+                        <label class="form-label">Password</label>
+                        <span asp-validation-for="TPassword"></span>
+                    </div>
+
+
+                    <!-- Submit button -->
+                    <input type="submit" class="btn btn-block" style="color:#24a0ed; " value="Log In">
+                    <p>If you don't have any account then <a asp-controller="Therapist" asp-action="TSignup"> Sign Up </a></p>
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                    </div>
+
+                    <a class="btn btn-primary btn-block" style="background-color: #3b5998; margin-bottom:15px;" href="#!"
+                       role="button">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i> Continue with Facebook
+                    </a>
+                    <br />
+                    <a class="btn btn-primary btn-block mb-3" style="background-color: #55acee;" href="#!"
+                       role="button">
+                        <i class="fa fa-envelope" aria-hidden="true"></i> Continue with Gmail
+                    </a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

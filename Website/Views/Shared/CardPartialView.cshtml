@@ -1,11 +1,11 @@
-﻿@model UserTable 
+﻿@model Therapist 
 <div class="card" style="display:inline-block; justify-content:space-around; width: 18rem;">
   <img src="~/lib/avatar.svg" class="card-img-top" alt="Male-Avatar">
   <div class="card-body">
-    <h5 class="card-title">@Model.Username</h5>
+    <h5 class="card-title">@Model.TUsername</h5>
     <p class="card-text"> This is some Text.</p>
-    <p id="Email_@Model.Id" style="display:none;">Email: @Model.Email</p>
-    <p id="Phone_@Model.Id" style="display:none;">Phone: @Model.Email</p>
+    <p id="Email_@Model.Id" style="display:none;">Email: @Model.TEmail</p>
+    <p id="Phone_@Model.Id" style="display:none;">Phone: @Model.TContactNum</p>
     <a href="#" class="btn btn-primary" id="b_@Model.Id" >Contact Information</a>
   </div>
 </div>

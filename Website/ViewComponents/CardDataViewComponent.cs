@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using Website.Models;
 using Website.Models.Interfaces;
+using Website.Models.Repositories;
+
 namespace Website.ViewComponents
 {
     public class CardDataViewComponent : ViewComponent
     {
-        private readonly UserRepository Iuser = new UserRepository();
+        private readonly TherapistRepository Itherapist = new TherapistRepository();
         public IViewComponentResult Invoke()
         {
-            List<UserTable> list = new List<UserTable>();
-            list = Iuser.getAllUsersEF();
+            List<Therapist> list = new List<Therapist>();
+            list = Itherapist.getAllTherapistEF();
             return View(list);
         }
     }

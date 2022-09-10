@@ -1,0 +1,71 @@
+﻿@using Website.Models
+@model Therapist
+@{
+    ViewData["Title"] = "Therapist Sign Up";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="~/lib/svg2.svg"
+                     class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+                <form method="post" action="/Therapist/TSignup" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <!-- Username input -->
+                    <div class="my-3 form-floating">
+                        <input asp-for="TUsername" class="form-control form-control-lg" />
+                        <label class="form-label" for="form1Example99">Username</label>
+                        <span asp-validation-for="TUsername"></span>
+
+                    </div>
+                    <!-- Email input -->
+                    <div class="my-3 form-floating">
+
+                        <input asp-for="TEmail" type="email" class="form-control form-control-lg" />
+                        <label class="form-label">Email address</label>
+                        <span asp-validation-for="TEmail"></span>
+
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="my-3 form-floating">
+
+                        <input asp-for="TPassword" type="password" class="form-control form-control-lg" />
+                        <label class="form-label">Password</label>
+                        <span asp-validation-for="TPassword"></span>
+
+                    </div>
+                    <!-- Number input -->
+                    <div class="my-3 form-floating">
+
+                        <input asp-for="TContactNum" class="form-control form-control-lg" />
+                        <label class="form-label">Contact Number</label>
+                        <span asp-validation-for="TContactNum"></span>
+
+                    </div>
+                    <div>
+                        <span>Select File: </span>
+                        <input type="file" name="postedFiles" multiple />
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-block" style="color:#24a0ed; ">Sign Up</button>
+
+
+                        <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                        </div>
+                        <p>If you already have an account then  <a class="btn btn-block" style="color:#24a0ed; " role="button" asp-action="LogIn"> Log In </a></p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
