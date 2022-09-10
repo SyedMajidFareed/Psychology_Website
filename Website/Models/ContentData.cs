@@ -5,8 +5,9 @@ namespace Website.Models
     public class ContentData
     {
         public int Id { get; set; }
+        public string? Category { get; set; }
         [Required]
-        [StringLength(50)]
+        [StringLength(100)]
         public string? Topic { get; set; }
         [Required]
         [MinLength(500)]

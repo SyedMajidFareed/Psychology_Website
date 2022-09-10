@@ -26,5 +26,58 @@ namespace Website.Models.Repositories
             return list;
          
         }
+        public List<ContentData> GetLatestContent()
+        {
+            ContentData contentData = new ContentData();
+
+            var db = new WebsiteDBContext();
+            var query = from data in db.ContentItems where data.Category == "Latest" select data;
+            List<ContentData> list = new List<ContentData>();
+
+
+            foreach (var item in query)
+            {
+
+                list.Add(item);
+            }
+            return list;
+
+        }
+        public List<ContentData> GetModernContent()
+        {
+            ContentData contentData = new ContentData();
+
+            var db = new WebsiteDBContext();
+            var query = from data in db.ContentItems where data.Category == "Modern" select data;
+
+            List<ContentData> list = new List<ContentData>();
+
+
+            foreach (var item in query)
+            {
+
+                list.Add(item);
+            }
+            return list;
+
+        }
+        public List<ContentData> GetQuranicContent()
+        {
+            ContentData contentData = new ContentData();
+
+            var db = new WebsiteDBContext();
+            var query = from data in db.ContentItems where data.Category == "Quranic" select data;
+
+            List<ContentData> list = new List<ContentData>();
+
+
+            foreach (var item in query)
+            {
+
+                list.Add(item);
+            }
+            return list;
+
+        }
     }
 }

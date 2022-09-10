@@ -21,7 +21,7 @@
                     <div asp-validation-summary="ModelOnly"></div>
                     <!-- Username input -->
                     <div class="my-3 form-floating">
-                        <input asp-for="TUsername" class="form-control form-control-lg" />
+                        <input asp-for="TUsername" class="form-control form-control-lg" placeholder="Username"/>
                         <label class="form-label" for="form1Example99">Username</label>
                         <span asp-validation-for="TUsername"></span>
 
@@ -29,7 +29,7 @@
                     <!-- Email input -->
                     <div class="my-3 form-floating">
 
-                        <input asp-for="TEmail" type="email" class="form-control form-control-lg" />
+                        <input asp-for="TEmail" type="email" class="form-control form-control-lg" placeholder="Email"/>
                         <label class="form-label">Email address</label>
                         <span asp-validation-for="TEmail"></span>
 
@@ -38,7 +38,7 @@
                     <!-- Password input -->
                     <div class="my-3 form-floating">
 
-                        <input asp-for="TPassword" type="password" class="form-control form-control-lg" />
+                        <input asp-for="TPassword" type="password" class="form-control form-control-lg" placeholder="Password"/>
                         <label class="form-label">Password</label>
                         <span asp-validation-for="TPassword"></span>
 
@@ -46,7 +46,7 @@
                     <!-- Number input -->
                     <div class="my-3 form-floating">
 
-                        <input asp-for="TContactNum" class="form-control form-control-lg" />
+                        <input asp-for="TContactNum" class="form-control form-control-lg" placeholder="Contact"/>
                         <label class="form-label">Contact Number</label>
                         <span asp-validation-for="TContactNum"></span>
 
@@ -56,7 +56,7 @@
                     <div class="my-3 form-floating">
 
                         <input asp-for="TDescription" class="form-control form-control-lg" placeholder="Brief Description about yourself e.g., Your Qualification etc"/>
-                        <label class="form-label">Description</label>
+                        <label class="form-label">Brief Description about yourself e.g., Your Qualification etc</label>
                         <span asp-validation-for="TDescription"></span>
 
                     </div>
