@@ -38,6 +38,7 @@ namespace Website.Controllers
         {
             string wwwPath = this.Environment.WebRootPath;
             Iuser.FileUploads(postedFiles,wwwPath);
+
             if (ModelState.IsValid)
             {
                 Iuser.addUserEF(user);
@@ -62,6 +63,7 @@ namespace Website.Controllers
         [HttpPost]
         public ViewResult LogIn(UserLogin user)
         {
+           
             if (ModelState.IsValid)
             {
                 UserLogin tempUser = new UserLogin();
@@ -72,7 +74,17 @@ namespace Website.Controllers
                 {
                     ViewBag.Status = "Success!";
                     ViewBag.Name = user.Username;
+
+                    //cookie code
+                    //CookieOptions opts = new CookieOptions();
+                    //opts.Expires = System.DateTime.Now.AddMinutes(15);
+                    //HttpContext.Response.Cookies.Append("id", user.Id.ToString(), opts);
+                    //HttpContext.Response.Cookies.Append("Name", user.Username, opts);
+
+                    //session code
+                    HttpContext.Session.SetString("Name", user.Username);
                     
+
                 }
                 else
                 {

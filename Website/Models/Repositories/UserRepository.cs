@@ -9,7 +9,6 @@ namespace Website.Models
     public class UserRepository : IUserLogin
     {
 
-
         public void addUserEF(UserTable user)
         {
             var db = new WebsiteDBContext();
@@ -42,6 +41,7 @@ namespace Website.Models
             {
                 return null;
             }
+
         }
 
         public UserLogin GetUserLoginEF(UserLogin user)

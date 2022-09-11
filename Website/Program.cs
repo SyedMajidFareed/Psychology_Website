@@ -12,7 +12,8 @@ builder.Services.AddSingleton<IUserLogin, UserRepository>();
 builder.Services.AddSingleton<IContentData, ContentDataRepository>();
 builder.Services.AddSingleton<ITherapist, TherapistRepository>();
 builder.Services.AddSingleton<IAdmin, AdminRepository>();
-
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,6 +24,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 

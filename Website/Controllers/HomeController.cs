@@ -18,6 +18,8 @@ namespace Website.Controllers
         }
         public ViewResult index()
         {
+            string username = HttpContext.Session.GetString("Name");
+            ViewBag.x = username;
             return View();
         }
     }
