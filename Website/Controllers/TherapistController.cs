@@ -68,6 +68,14 @@ namespace Website.Controllers
                 {
                     ViewBag.Status = "Success!";
                     ViewBag.Name = tuser.TUsername;
+                    ////cookie code
+                    //CookieOptions opts = new CookieOptions();
+                    //opts.Expires = System.DateTime.Now.AddMinutes(15);
+                    ////HttpContext.Response.Cookies.Append("id", user.Id.ToString(), opts);
+                    //HttpContext.Response.Cookies.Append("TName", tuser.TUsername, opts);
+
+                    //session code
+                    HttpContext.Session.SetString("Name", tuser.TUsername);
 
                 }
                 else
