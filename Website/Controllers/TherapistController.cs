@@ -61,7 +61,7 @@ namespace Website.Controllers
         {
             if (ModelState.IsValid)
             {
-                TherapistLogin tempUser = new TherapistLogin();
+                Therapist tempUser = new Therapist();
                 tempUser = Itherapist.GetTherapistLogin(tuser);
 
                 //to check if the user was authenticated (from DB)
@@ -79,7 +79,7 @@ namespace Website.Controllers
                     HttpContext.Session.SetString("Name", tuser.TUsername);
                     
                     //calling another function to save therapist id for audit columns
-                    Itherapist.setTherapistID(tuser);
+                    Itherapist.setTherapistID(tempUser);
 
 
                 }

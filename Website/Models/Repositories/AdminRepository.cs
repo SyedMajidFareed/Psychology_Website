@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using System.Collections.Generic;
 using Website.Models.Interfaces;
 
 namespace Website.Models.Repositories
@@ -24,6 +25,20 @@ namespace Website.Models.Repositories
         public int getAdminID()
         {
             return ID;
+        }
+        public void deleteUser(int id)
+        {
+            var db = new WebsiteDBContext();
+            UserTable newUser = new UserTable();
+            var User = from user in db.UserTables where user.Id==id select user;
+
+            foreach (var item in User)
+            {
+                newUser = item;
+               
+            }
+            db.UserTables.Remove(newUser);
+            db.SaveChanges();
         }
     }
 }

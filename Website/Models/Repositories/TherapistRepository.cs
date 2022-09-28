@@ -42,13 +42,14 @@ namespace Website.Models.Repositories
 
 
 
-        public TherapistLogin GetTherapistLogin(TherapistLogin therapist)
+        public Therapist GetTherapistLogin(TherapistLogin therapist)
         {
             var db = new WebsiteDBContext();
-            var query = db.Therapists.Where(u => u.TUsername == therapist.TUsername && u.TPassword == therapist.TPassword);
-            if (query.Count() > 0)
+            Therapist Temptherapist = new Therapist();
+            db.Therapists.Where(u => u.TUsername == therapist.TUsername && u.TPassword == therapist.TPassword).ToList().ForEach(o => Temptherapist = o);
+            if (Temptherapist != null)
             {
-                return therapist;
+                return Temptherapist;
             }
             else
             {
@@ -57,11 +58,10 @@ namespace Website.Models.Repositories
 
         }
 
-        public void setTherapistID(TherapistLogin user)
+        public void setTherapistID(Therapist user)
         {
-            var db = new WebsiteDBContext();
-            var query = db.UserTables.Where(u => u.Username == user.TUsername && u.Password == user.TPassword);
-            if (query.Count() > 0)
+            
+            if (user.Id != null)
             {
                 ID = user.Id;
             }

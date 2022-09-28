@@ -11,7 +11,7 @@ namespace Website.Models
         private readonly UserRepository Iuser= new UserRepository();
         private readonly TherapistRepository Itherapist= new TherapistRepository();
         private readonly AdminRepository Iadmin= new AdminRepository();
-        public static int ID = 0;
+        public static int? ID = 0;
         public WebsiteDBContext()
         {
         }
@@ -32,7 +32,7 @@ namespace Website.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Initial Catalog=WebsiteDB;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Initial Catalog=WebsiteDB;Integrated Security=True; MultipleActiveResultSets=true");
             }
         }
 
@@ -61,7 +61,7 @@ namespace Website.Models
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
         public override int SaveChanges()
         {
-            int idUser = Iuser.getUserID();
+            int? idUser = Iuser.getUserID();
             int idTherapist = Itherapist.getTherapistID();
             int idAdmin = Iadmin.getAdminID();
             if(idUser!=0)

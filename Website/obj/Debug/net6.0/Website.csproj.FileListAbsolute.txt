@@ -130,3 +130,5 @@ D:\website\Psychology_Website\Website\obj\Debug\net6.0\Website.genruntimeconfig.
 D:\website\Psychology_Website\Website\obj\Debug\net6.0\ref\Website.dll
 C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\MajidFareed\source\repos\Website\Website\obj\Debug\net6.0\Website.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\Microsoft.Docs.Samples.RouteInfo.dll

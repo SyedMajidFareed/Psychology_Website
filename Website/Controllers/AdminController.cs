@@ -55,5 +55,11 @@ namespace Website.Controllers
 
 
         }
+        public IActionResult DeleteUser(int id)
+        {
+            
+            Iadmin.deleteUser(id);
+            return this.Ok($"User Deleted");
+        }
     }
 }

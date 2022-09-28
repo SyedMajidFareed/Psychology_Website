@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KOeu75Im6dXC3PzpczzpZRVlR0SOQU5LMXVBiE+tA1VRrqNBi8DROZbWZCjKpXw2eKfrbymDTo2qSji5AZbP8Q==",
+  "dgSpecHash": "yZ33XDyNpUzYgNp4uJ/awHUBf5VYkqLVfBuoqQLwekSORDS2aaMFbhR2Aaht+mNhsd03wpK+49xAmgXn0K0baQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\MajidFareed\\source\\repos\\Website\\Website\\Website.csproj",
   "expectedPackageFiles": [
@@ -48,8 +48,10 @@
     "C:\\Users\\MajidFareed\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "C:\\Users\\MajidFareed\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\MajidFareed\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\MajidFareed\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\MajidFareed\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\MajidFareed\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\MajidFareed\\.nuget\\packages\\rick.docs.samples.routeinfo\\1.0.0.8\\rick.docs.samples.routeinfo.1.0.0.8.nupkg.sha512",
     "C:\\Users\\MajidFareed\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\MajidFareed\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\MajidFareed\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

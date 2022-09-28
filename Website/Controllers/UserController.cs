@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Docs.Samples;
 using Website.Models;
 using Website.Models.Interfaces;
 using Website.Models.VIewModels;
@@ -66,7 +67,7 @@ namespace Website.Controllers
            
             if (ModelState.IsValid)
             {
-                UserLogin tempUser = new UserLogin();
+                UserTable tempUser = new UserTable();
                 tempUser = Iuser.GetUserLoginEF(user);
 
                 //to check if the user was authenticated (from DB)
@@ -85,7 +86,7 @@ namespace Website.Controllers
                     HttpContext.Session.SetString("Name", user.Username);
 
                     //calling another function to save user id for audit columns
-                    Iuser.setUserID(user);
+                    Iuser.setUserID(tempUser);
 
                 }
                 else
@@ -146,5 +147,6 @@ namespace Website.Controllers
             
             return View(User);
         }
+        
     }
 }
