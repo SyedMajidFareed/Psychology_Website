@@ -5,12 +5,14 @@ namespace Website.Models.Repositories
 {
     public class AdminRepository : IAdmin
     {
+        public static int ID = 0;
         public Admin login(Admin admin)
         {
             var db = new WebsiteDBContext();
             var query = db.UserTables.Where(u => u.Username == admin.Name && u.Password == admin.Password);
             if (query.Count() > 0)
             {
+                ID = admin.Id;
                 return admin;
             }
             else
@@ -18,6 +20,10 @@ namespace Website.Models.Repositories
                 return null;
             }
 
+        }
+        public int getAdminID()
+        {
+            return ID;
         }
     }
 }

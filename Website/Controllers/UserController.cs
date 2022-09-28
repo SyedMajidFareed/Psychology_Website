@@ -83,7 +83,9 @@ namespace Website.Controllers
 
                     //session code
                     HttpContext.Session.SetString("Name", user.Username);
-                    
+
+                    //calling another function to save user id for audit columns
+                    Iuser.setUserID(user);
 
                 }
                 else

@@ -5,6 +5,7 @@ namespace Website.Models.Repositories
 {
     public class TherapistRepository : ITherapist
     {
+        public static int ID = 0;
         public void addTherapistEF(Therapist therapist)
         {
             var db = new WebsiteDBContext();
@@ -55,6 +56,26 @@ namespace Website.Models.Repositories
             }
 
         }
+
+        public void setTherapistID(TherapistLogin user)
+        {
+            var db = new WebsiteDBContext();
+            var query = db.UserTables.Where(u => u.Username == user.TUsername && u.Password == user.TPassword);
+            if (query.Count() > 0)
+            {
+                ID = user.Id;
+            }
+            else
+            {
+                ID = 0;
+            }
+        }
+
+        public int getTherapistID()
+        {
+            return ID;
+        }
+
         public void FileUploads(List<IFormFile> postedFiles, string wwwPath)
         {
             string path = Path.Combine(wwwPath, "TherapistUploads");

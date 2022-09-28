@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Website.Models.Repositories;
 
 namespace Website.Models
 {
     public partial class WebsiteDBContext : DbContext
     {
+        private readonly UserRepository Iuser= new UserRepository();
+        private readonly TherapistRepository Itherapist= new TherapistRepository();
+        private readonly AdminRepository Iadmin= new AdminRepository();
+        public static int ID = 0;
         public WebsiteDBContext()
         {
         }
@@ -56,7 +61,22 @@ namespace Website.Models
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
         public override int SaveChanges()
         {
-           
+            int idUser = Iuser.getUserID();
+            int idTherapist = Itherapist.getTherapistID();
+            int idAdmin = Iadmin.getAdminID();
+            if(idUser!=0)
+            {
+                ID = idUser;
+            }
+            else if (idTherapist != 0)
+            {
+                ID = idTherapist;
+            }
+            else if (idAdmin != 0)
+            {
+                ID = idAdmin;
+            }
+
             var tracker = ChangeTracker;
             foreach (var entry in tracker.Entries())
             {
@@ -67,13 +87,13 @@ namespace Website.Models
                     {
                         case EntityState.Added:
                             referenceEntity.CreatedDate = DateTime.Now;
-                            referenceEntity.CreatedByUserId = "1";//hard coded user id
+                            referenceEntity.CreatedByUserId = ID.ToString();
 
                             break;
                         case EntityState.Deleted:
                         case EntityState.Modified:
                             referenceEntity.LastModifiedDate = DateTime.Now;
-                            referenceEntity.LastModifiedUserId = "1";//hard coded user id
+                            referenceEntity.LastModifiedUserId = ID.ToString();
                             break;
                         default:
                             break;

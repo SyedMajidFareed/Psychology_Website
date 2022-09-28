@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Website.Models.Interfaces;
 using Website.Models;
+using System.Collections.Generic;
 
 namespace Website.Controllers
 {
@@ -76,6 +77,10 @@ namespace Website.Controllers
 
                     //session code
                     HttpContext.Session.SetString("Name", tuser.TUsername);
+                    
+                    //calling another function to save therapist id for audit columns
+                    Itherapist.setTherapistID(tuser);
+
 
                 }
                 else

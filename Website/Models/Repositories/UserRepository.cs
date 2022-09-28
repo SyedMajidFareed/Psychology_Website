@@ -8,7 +8,7 @@ namespace Website.Models
 {
     public class UserRepository : IUserLogin
     {
-
+        public static int ID = 0;
         public void addUserEF(UserTable user)
         {
             var db = new WebsiteDBContext();
@@ -96,8 +96,24 @@ namespace Website.Models
             }
         }
 
+        public void setUserID(UserLogin user)
+        {
+            var db = new WebsiteDBContext();
+            var query = db.UserTables.Where(u => u.Username == user.Username && u.Password == user.Password);
+            if (query.Count() > 0)
+            {
+                ID = user.Id;
+            }
+            else
+            {
+                ID = 0;
+            }
+        }
 
-
+        public int getUserID()
+        {
+            return ID;
+        }
 
 
 
