@@ -1,0 +1,9 @@
+﻿@model ContentData
+<tr>
+
+    <td>   @Model.Topic   </td>
+    <td>   @Model.Category   </td>
+    
+    <td>   <a asp-route-Id="@Model.Id" asp-controller="Admin" asp-action="DeleteContent" class="btn btn-primary" role="button"> Delete </a>   </td>
+
+</tr>

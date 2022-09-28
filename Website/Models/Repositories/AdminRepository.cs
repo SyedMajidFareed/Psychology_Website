@@ -40,5 +40,33 @@ namespace Website.Models.Repositories
             db.UserTables.Remove(newUser);
             db.SaveChanges();
         }
+        public void deleteTherapist(int id)
+        {
+            var db = new WebsiteDBContext();
+            Therapist newUser = new Therapist();
+            var User = from user in db.Therapists where user.Id==id select user;
+
+            foreach (var item in User)
+            {
+                newUser = item;
+               
+            }
+            db.Therapists.Remove(newUser);
+            db.SaveChanges();
+        }
+        public void deleteContent(int id)
+        {
+            var db = new WebsiteDBContext();
+            ContentData newUser = new ContentData();
+            var User = from user in db.ContentItems where user.Id == id select user;
+
+            foreach (var item in User)
+            {
+                newUser = item;
+
+            }
+            db.ContentItems.Remove(newUser);
+            db.SaveChanges();
+        }
     }
 }

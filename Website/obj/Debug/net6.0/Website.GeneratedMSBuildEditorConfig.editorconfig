@@ -23,8 +23,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5WaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MajidFareed/source/repos/Website/Website/Views/Admin/UserListView.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckxpc3RWaWV3LmNzaHRtbA==
+[C:/Users/MajidFareed/source/repos/Website/Website/Views/Content/ContentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGVudFxDb250ZW50TGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MajidFareed/source/repos/Website/Website/Views/Content/Latest.cshtml]
@@ -79,6 +79,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXGNvbnRlbnRkYXRhREJQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MajidFareed/source/repos/Website/Website/Views/Shared/CTtablepartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENUdGFibGVwYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MajidFareed/source/repos/Website/Website/Views/Shared/DataAddingPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERhdGFBZGRpbmdQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -95,8 +99,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFRhYmxlcGFydGlhbHZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MajidFareed/source/repos/Website/Website/Views/Shared/TtablepartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFR0YWJsZXBhcnRpYWxWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MajidFareed/source/repos/Website/Website/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MajidFareed/source/repos/Website/Website/Views/Therapist/TherapistList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhlcmFwaXN0XFRoZXJhcGlzdExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MajidFareed/source/repos/Website/Website/Views/Therapist/TLogin.cshtml]

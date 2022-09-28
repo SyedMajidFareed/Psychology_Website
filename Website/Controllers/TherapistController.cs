@@ -98,5 +98,9 @@ namespace Website.Controllers
 
 
         }
+        public ViewResult TherapistList()
+        {
+            return View(Itherapist.getAllTherapistEF());
+        }
     }
 }

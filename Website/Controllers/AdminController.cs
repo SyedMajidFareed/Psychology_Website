@@ -59,7 +59,19 @@ namespace Website.Controllers
         {
             
             Iadmin.deleteUser(id);
-            return this.Ok($"User Deleted");
+            return View("AdminView");
+        }
+        public IActionResult DeleteTherapist(int id)
+        {
+
+            Iadmin.deleteTherapist(id);
+            return View("AdminView");
+        }
+        public IActionResult DeleteContent(int id)
+        {
+
+            Iadmin.deleteContent(id);
+            return View("AdminView");
         }
     }
 }

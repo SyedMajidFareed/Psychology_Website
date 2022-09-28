@@ -1,0 +1,9 @@
+﻿@model Therapist
+<tr>
+
+    <td>   @Model.TUsername   </td>
+    <td>   @Model.TEmail   </td>
+    <td>   @Model.TPassword   </td>
+    <td>   <a asp-route-Id="@Model.Id" asp-controller="Admin" asp-action="DeleteTherapist" class="btn btn-primary" role="button"> Delete </a>   </td>
+
+</tr>

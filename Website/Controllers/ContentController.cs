@@ -41,5 +41,9 @@ namespace Website.Controllers
         {
             return View();
         }
+        public IActionResult ContentList()
+        {
+            return View(Icontent.GetContent());
+        }
     }
 }
