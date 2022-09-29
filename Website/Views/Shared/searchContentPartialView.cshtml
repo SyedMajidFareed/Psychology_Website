@@ -1,0 +1,7 @@
+﻿<input type="text" id="searchtext" placeholder="Search" />
+<button class="btn btn-primary my-2 my-sm-0" type="button">Search</button>
+
+<script>
+    var searchQuery = $("#searchtext").val();
+    $.get('/Content/search', { mySearchTerm: searchQuery })
+</script>

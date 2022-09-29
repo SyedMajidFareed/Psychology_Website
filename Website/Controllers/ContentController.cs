@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Website.Models.Interfaces;
 using Website.Models;
+using System.Web.Mvc;
+using Controller = Microsoft.AspNetCore.Mvc.Controller;
+using JsonResult = Microsoft.AspNetCore.Mvc.JsonResult;
 
 namespace Website.Controllers
 {
@@ -44,6 +47,22 @@ namespace Website.Controllers
         public IActionResult ContentList()
         {
             return View(Icontent.GetContent());
+        }
+        public IActionResult search(string SearchBy, string SearchValue)
+        {
+            //ContentData temp = new ContentData();
+            //temp = Icontent.searchContent(SearchBy);
+            //if(temp!=null)
+            //{
+            //    ViewBag.x = "success";
+            //    return View(temp);
+            //}
+            //else
+            //{
+            //    ViewBag.x = "failure";
+            //    return View();
+            //}
+            return Json(Icontent.searchContent(SearchBy), JsonRequestBehavior.AllowGet);
         }
     }
 }

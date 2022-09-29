@@ -1,0 +1,62 @@
+﻿@model List<ContentData>
+
+<div class="container">
+    <b>Search By: </b>
+    <select id=" = "SearchBy>
+        <option value="Topic">Topic</option>
+        <option value="Category">Category</option>
+    </select>
+    @Html.TextBox("Search")<input type="submit" id="SearchBtn" value="Search" />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Topic Name</th>
+                <th>Category Name</th>
+            </tr>
+        </thead>
+    </table>
+    <tbody id="DataSearching">
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Topic</td>
+                <td>@item.Category</td>
+            </tr>
+        }
+    </tbody>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#SearchBtn').click(function () {
+            var SearchBy = $("#SearchBy").val();
+            var SearchValue = $("#Search").val();
+            var SetData = $("#DataSearching").val();
+            SetData.html("");
+            $.ajax({
+                type:'POST',
+                url: 'Content/Search?SearchBy=' + SearchBy + '&SearchValue=' + SearchValue,
+                contentType:"html",
+                success:function(result){
+                    if(result.length == 0)
+                    {
+                        SetData.Append('<tr><td>No match data</td> </tr>')
+                    }
+                    else
+                    {
+                        $.each(result,function(index,value){
+                            var Data = "<tr>" + "<td>"+value.Topic +"< /td>"+
+                                "<td>" + value.Category + "< /td>"+"</tr>";
+                                SetData.Append(Data);
+                        })
+                    }
+                }
+            })
+           
+        })
+    })
+</script>
+
+

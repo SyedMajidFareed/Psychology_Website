@@ -132,3 +132,10 @@ C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\AutoMapper.dl
 C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\MajidFareed\source\repos\Website\Website\obj\Debug\net6.0\Website.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\Microsoft.Docs.Samples.RouteInfo.dll
+C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\MajidFareed\source\repos\Website\Website\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll

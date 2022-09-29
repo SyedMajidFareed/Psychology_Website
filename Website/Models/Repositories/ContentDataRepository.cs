@@ -79,5 +79,21 @@ namespace Website.Models.Repositories
             return list;
 
         }
+        public List<ContentData> searchContent(string TopicName)
+        {
+            ContentData contentData = new ContentData();
+
+            var db = new WebsiteDBContext();
+            var query = from data in db.ContentItems where data.Topic == TopicName select data;
+
+            List<ContentData> list = new List<ContentData>();
+
+
+            foreach (var item in query)
+            {
+                list.Add(item);
+            }
+            return list;
+        }
     }
 }

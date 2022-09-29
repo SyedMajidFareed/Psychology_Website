@@ -7,5 +7,6 @@
         public List<ContentData> GetLatestContent();
         public List<ContentData> GetModernContent();
         public List<ContentData> GetQuranicContent();
+        public List<ContentData> searchContent(string TopicName);
     }
 }
